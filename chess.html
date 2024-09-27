@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard</title>
+</head>
+<body>
+    <script>
+        // User story 3: Declare a variable board_size
+        const board_size = 8; // You can change this value to create a different size board
+
+        // User story 1: Function to print the chessboard
+        function print(data) {
+            const label = document.createElement('div');
+            label.innerHTML = data;
+            document.body.appendChild(label);
+        }
+
+        // User story 2: Function to create a line break
+        function newLine() {
+            return '<br>';
+        }
+
+        // User story 4: Create the chessboard
+        function createChessboard(size) {
+            let board = '';
+            for (let row = 0; row < size; row++) {
+                for (let col = 0; col < size; col++) {
+                    // Use '*' for black squares and '#' for white squares
+                    if ((row + col) % 2 === 0) {
+                        board += '* '; // Black square
+                    } else {
+                        board += '# '; // White square
+                    }
+                }
+                board += newLine(); // Go to the next line after each row
+            }
+            print(board); // Print the final chessboard
+        }
+
+        // Call the function to create and display the chessboard
+        createChessboard(board_size);
+    </script>
+</body>
+</html>
